@@ -8,4 +8,7 @@ export default {
 
 	'menu.DanhMuc': 'Danh mục',
 	'menu.DanhMuc.ChucVu': 'Chức vụ',
+
+	'menu.GuessNumber': 'Game Đoán Số',
+	'menu.TodoList': 'Danh Sách Công Việc',
 };
