@@ -5,4 +5,11 @@ declare module NganHangCauHoi {
         noiDung: string;
         mucDo: 'Dễ' | 'Trung bình' | 'Khó' | 'Rất khó';
     }
+
+    export interface IDeThi {
+        maDe: string;
+        monHoc: string;
+        danhSachCauHoi: ICauHoi[];
+        thoiGianTao: string;
+    }
 }

@@ -13,7 +13,15 @@ function mauMucDo(mucDo: string): string {
 }
 
 const NganHangCauHoiPage = () => {
-    const { danhSachCauHoi, themCauHoi, xoaCauHoi, layDanhSachMon, taoDeThi } = useModel('nganhangcauhoi');
+    const {
+        danhSachCauHoi,
+        danhSachDeThi,
+        themCauHoi,
+        xoaCauHoi,
+        layDanhSachMon,
+        taoDeThi,
+        xoaDeThi,
+    } = useModel('nganhangcauhoi');
     const [form] = Form.useForm();
 
     // State cho Modal "Tạo đề ngẫu nhiên"
@@ -70,7 +78,7 @@ const NganHangCauHoiPage = () => {
             title: 'Thao tác',
             width: 100,
             align: 'center' as const,
-            render: (_, record: NganHangCauHoi.ICauHoi) => (
+            render: (_: any, record: NganHangCauHoi.ICauHoi) => (
                 <Button danger type="link" onClick={() => xoaCauHoi(record.maCauHoi)}>
                     Xóa
                 </Button>
@@ -196,6 +204,61 @@ const NganHangCauHoiPage = () => {
                     </div>
                 )}
             </Modal>
+
+            {/* BẢNG LỊCH SỬ ĐỀ THI */}
+            {danhSachDeThi.length > 0 && (
+                <div style={{ marginTop: 32 }}>
+                    <h3>Lịch sử Đề thi ({danhSachDeThi.length} đề)</h3>
+                    <Table
+                        dataSource={danhSachDeThi}
+                        columns={[
+                            { title: 'Mã đề', dataIndex: 'maDe', width: 140 },
+                            { title: 'Môn học', dataIndex: 'monHoc', width: 150 },
+                            {
+                                title: 'Số câu',
+                                dataIndex: 'danhSachCauHoi',
+                                width: 100,
+                                align: 'center' as const,
+                                render: (list: any[]) => list.length,
+                            },
+                            { title: 'Thời gian tạo', dataIndex: 'thoiGianTao', width: 160 },
+                            {
+                                title: 'Thao tác',
+                                width: 100,
+                                align: 'center' as const,
+                                render: (_: any, record: any) => (
+                                    <Button danger type="link" onClick={() => xoaDeThi(record.maDe)}>
+                                        Xóa biểu ghi
+                                    </Button>
+                                ),
+                            },
+                        ]}
+                        rowKey="maDe"
+                        size="small"
+                        pagination={{ pageSize: 5 }}
+                        expandable={{
+                            expandedRowRender: (de) => (
+                                <Table
+                                    dataSource={de.danhSachCauHoi}
+                                    columns={[
+                                        { title: 'Mã', dataIndex: 'maCauHoi', width: 80 },
+                                        { title: 'Nội dung', dataIndex: 'noiDung' },
+                                        {
+                                            title: 'Mức độ',
+                                            dataIndex: 'mucDo',
+                                            width: 100,
+                                            render: (val: string) => <Tag color={mauMucDo(val)}>{val}</Tag>,
+                                        },
+                                    ]}
+                                    rowKey="maCauHoi"
+                                    size="small"
+                                    pagination={false}
+                                />
+                            ),
+                        }}
+                    />
+                </div>
+            )}
         </Card>
     );
 };

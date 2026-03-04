@@ -26,6 +26,9 @@ export default () => {
     const [danhSachCauHoi, setDanhSachCauHoi] = useState<NganHangCauHoi.ICauHoi[]>(() =>
         docLocalStorage<NganHangCauHoi.ICauHoi>('nhch_cauhoi_v2'),
     );
+    const [danhSachDeThi, setDanhSachDeThi] = useState<NganHangCauHoi.IDeThi[]>(() =>
+        docLocalStorage<NganHangCauHoi.IDeThi>('nhch_dethi_v2'),
+    );
 
     function themCauHoi(cauHoi: NganHangCauHoi.ICauHoi) {
         const moi = [cauHoi, ...danhSachCauHoi];
@@ -57,14 +60,34 @@ export default () => {
         }
 
         const deChon = chonNgauNhien(cauHoiMon, soLuong);
+
+        // Lưu đề thi vào lịch sử
+        const deThiMoi: NganHangCauHoi.IDeThi = {
+            maDe: `DE${Date.now()}`,
+            monHoc,
+            danhSachCauHoi: deChon,
+            thoiGianTao: new Date().toLocaleString('vi-VN'),
+        };
+        const dsMoi = [deThiMoi, ...danhSachDeThi];
+        setDanhSachDeThi(dsMoi);
+        luuLocalStorage('nhch_dethi_v2', dsMoi);
+
         return { ok: true, message: 'Tạo đề thành công!', deThi: deChon };
+    }
+
+    function xoaDeThi(maDe: string) {
+        const moi = danhSachDeThi.filter((d) => d.maDe !== maDe);
+        setDanhSachDeThi(moi);
+        luuLocalStorage('nhch_dethi_v2', moi);
     }
 
     return {
         danhSachCauHoi,
+        danhSachDeThi,
         themCauHoi,
         xoaCauHoi,
         layDanhSachMon,
         taoDeThi,
+        xoaDeThi,
     };
 };
