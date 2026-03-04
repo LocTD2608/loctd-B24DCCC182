@@ -36,6 +36,18 @@
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
 	},
+	{
+		path: '/oan-tu-ti',
+		name: 'OanTuTi',
+		component: './OanTuTi',
+		icon: 'ThunderboltOutlined',
+	},
+	{
+		path: '/ngan-hang-cau-hoi',
+		name: 'NganHangCauHoi',
+		component: './NganHangCauHoi',
+		icon: 'BankOutlined',
+	},
 
 	// DANH MUC HE THONG
 	// {
