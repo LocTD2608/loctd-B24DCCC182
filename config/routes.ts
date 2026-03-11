@@ -1,4 +1,4 @@
-﻿export default [
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -24,6 +24,15 @@
 		component: './TrangChu',
 		icon: 'HomeOutlined',
 	},
+
+	{
+        path: '/statistics',
+        name: 'Thống kê & Báo cáo',
+        component: './statistics',
+        icon: 'AreaChartOutlined',
+        locale: false, 
+    },
+
 	{
 		path: '/statistics',
 		name: 'Thống kê & Báo cáo',
@@ -54,6 +63,24 @@
 		name: 'TodoList',
 		component: './TodoList',
 		icon: 'CheckSquareOutlined',
+	},
+	{
+		path: '/oan-tu-ti',
+		name: 'OanTuTi',
+		component: './OanTuTi',
+		icon: 'SmileOutlined',
+	},
+	{
+		path: '/ngan-hang-cau-hoi',
+		name: 'NganHangCauHoi',
+		component: './NganHangCauHoi',
+		icon: 'ReadOutlined',
+	},
+	{
+		path: '/quan-ly',
+		name: 'QuanLy',
+		component: './QuanLy',
+		icon: 'CalendarOutlined',
 	},
 
 	// ← Từ nhánh feature/quan-li-lich-hen
@@ -97,6 +124,40 @@
 	// 		},
 	// 	],
 	// },
+
+	{
+		name: 'Quản lý Đặt Lịch',
+		path: '/dat-lich',
+		icon: 'CalendarOutlined',
+		routes: [
+			{
+				name: 'Nhân viên',
+				path: 'nhan-vien',
+				component: './DatLich/NhanVien',
+			},
+			{
+				name: 'Dịch vụ',
+				path: 'dich-vu',
+				component: './DatLich/DichVu',
+			},
+			{
+				name: 'Lịch hẹn',
+				path: 'lich-hen',
+				component: './DatLich/LichHen',
+			},
+			{
+				name: 'Đánh giá',
+				path: 'danh-gia',
+				component: './DatLich/DanhGia',
+			},
+			{
+				name: 'Thống kê',
+				path: 'thong-ke',
+				component: './DatLich/ThongKe',
+			},
+		],
+	},
+
 
 	{
 		path: '/notification',
