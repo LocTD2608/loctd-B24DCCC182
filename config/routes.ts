@@ -60,6 +60,12 @@
 		component: './NganHangCauHoi',
 		icon: 'ReadOutlined',
 	},
+	{
+		path: '/quan-ly',
+		name: 'QuanLy',
+		component: './QuanLy',
+		icon: 'CalendarOutlined',
+	},
 
 	// DANH MUC HE THONG
 	// {

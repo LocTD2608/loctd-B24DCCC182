@@ -13,4 +13,9 @@ export default {
 	'menu.TodoList': 'Danh Sách Công Việc',
 	'menu.OanTuTi': 'Game Oẳn Tù Tì',
 	'menu.NganHangCauHoi': 'Ngân Hàng Câu Hỏi',
+	'menu.QuanLy': 'Quản Lý',
+	'menu.QuanLy.NhanVien': 'Nhân Viên',
+	'menu.QuanLy.DinhVu': 'Dịch Vụ',
+	'menu.QuanLy.LichHen': 'Lịch Hẹn',
+	'menu.QuanLy.LichLamViec': 'Lịch Làm Việc',
 };
