@@ -1,4 +1,4 @@
-﻿routerexport default [
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -24,6 +24,15 @@
 		component: './TrangChu',
 		icon: 'HomeOutlined',
 	},
+
+	{
+        path: '/statistics',
+        name: 'Thống kê & Báo cáo',
+        component: './statistics',
+        icon: 'AreaChartOutlined',
+        locale: false, 
+    },
+
 	{
 		path: '/gioi-thieu',
 		name: 'About',
@@ -35,6 +44,36 @@
 		name: 'RandomUser',
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
+	},
+	{
+		path: '/guess-number',
+		name: 'GuessNumber',
+		component: './GuessNumber',
+		icon: 'TrophyOutlined',
+	},
+	{
+		path: '/todo-list',
+		name: 'TodoList',
+		component: './TodoList',
+		icon: 'CheckSquareOutlined',
+	},
+	{
+		path: '/oan-tu-ti',
+		name: 'OanTuTi',
+		component: './OanTuTi',
+		icon: 'SmileOutlined',
+	},
+	{
+		path: '/ngan-hang-cau-hoi',
+		name: 'NganHangCauHoi',
+		component: './NganHangCauHoi',
+		icon: 'ReadOutlined',
+	},
+	{
+		path: '/quan-ly',
+		name: 'QuanLy',
+		component: './QuanLy',
+		icon: 'CalendarOutlined',
 	},
 
 	// DANH MUC HE THONG
@@ -109,6 +148,7 @@
 	},
 	{
 		path: '/',
+		redirect: '/dashboard',
 	},
 	{
 		path: '/403',
