@@ -1,4 +1,4 @@
-﻿export default [
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -54,6 +54,12 @@
         icon: 'search', // Bạn có thể đổi icon tùy thích
         component: './TraCuu',
     },
+	{
+		path: '/quan-ly-so-van-bang',
+		name: 'Quản lý Sổ Văn Bằng',
+		component: './QuanLySoVanBang',
+		icon: 'BookOutlined',
+	},
 
 	// DANH MUC HE THONG
 	// {
@@ -69,6 +75,18 @@
 	// 	],
 	// },
 
+	{
+		path: '/van-bang',
+		name: 'Văn bằng',
+		icon: 'SolutionOutlined',
+		routes: [
+			{
+				path: '/van-bang/bieu-mau',
+				name: 'Cấu hình biểu mẫu',
+				component: './VanBang/BieuMau',
+			},
+		]
+	},
 	{
 		path: '/notification',
 		routes: [
