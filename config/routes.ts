@@ -48,6 +48,12 @@
 		component: './TodoList',
 		icon: 'CheckSquareOutlined',
 	},
+	{
+		path: '/quan-ly-so-van-bang',
+		name: 'Quản lý Sổ Văn Bằng',
+		component: './QuanLySoVanBang',
+		icon: 'BookOutlined',
+	},
 
 	// DANH MUC HE THONG
 	// {
