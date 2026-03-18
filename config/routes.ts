@@ -24,6 +24,15 @@ export default [
 		component: './TrangChu',
 		icon: 'HomeOutlined',
 	},
+
+	{
+        path: '/statistics',
+        name: 'Thống kê & Báo cáo',
+        component: './statistics',
+        icon: 'AreaChartOutlined',
+        locale: false, 
+    },
+
 	{
 		path: '/gioi-thieu',
 		name: 'About',
@@ -47,6 +56,18 @@ export default [
 		name: 'TodoList',
 		component: './TodoList',
 		icon: 'CheckSquareOutlined',
+	},
+	{
+		path: '/oan-tu-ti',
+		name: 'OanTuTi',
+		component: './OanTuTi',
+		icon: 'SmileOutlined',
+	},
+	{
+		path: '/ngan-hang-cau-hoi',
+		name: 'NganHangCauHoi',
+		component: './NganHangCauHoi',
+		icon: 'ReadOutlined',
 	},
 	{
 		path: '/quan-ly-so-van-bang',
@@ -105,6 +126,7 @@ export default [
 	},
 	{
 		path: '/',
+		redirect: '/dashboard',
 	},
 	{
 		path: '/403',
@@ -115,6 +137,12 @@ export default [
 		path: '/hold-on',
 		component: './exception/DangCapNhat',
 		layout: false,
+	},
+	{
+		path: '/quyet-dinh',
+		name: 'Quyết định tốt nghiệp',
+		icon: 'file-done',
+		component: './QuyetDinhTotNghiep', 
 	},
 	{
 		component: './exception/404',
