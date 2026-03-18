@@ -121,6 +121,12 @@
 		layout: false,
 	},
 	{
+		path: '/quyet-dinh',
+		name: 'Quyết định tốt nghiệp',
+		icon: 'file-done',
+		component: './QuyetDinhTotNghiep', 
+	},
+	{
 		component: './exception/404',
 	},
 ];

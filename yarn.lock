@@ -518,42 +518,43 @@
   "resolved" "https://registry.npmjs.org/@antv/hierarchy/-/hierarchy-0.6.14.tgz"
   "version" "0.6.14"
 
-"@antv/l7-component@2.24.1":
-  "integrity" "sha512-FTvT4WK+0YoEuj03iUY9bVyaTiMcxTvhCaREtwfXpLKDu5A6mXsonrHjYoqACqK3kidIeea23l3gXDZntoh83g=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-component/-/l7-component-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-component@2.25.2":
+  "integrity" "sha512-Cx+DKTGXPbNthGbpLu/GKPRd+sslfDXGwLDlM8L5sgnelRkglIGD5bC83WwwsF+1uBLe3Sk2HLm/jqYQ/hQdwg=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-component/-/l7-component-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
-    "@antv/l7-core" "2.24.1"
-    "@antv/l7-layers" "2.24.1"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-core" "2.25.2"
+    "@antv/l7-layers" "2.25.2"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "eventemitter3" "^4.0.0"
     "supercluster" "^7.0.0"
 
-"@antv/l7-core@2.24.1":
-  "integrity" "sha512-+s4jn4am3KPBgdfeX6O0M4wdC7BEZQbfI3pJkJfj9Wgu0gH8BOeb7icJKlW7xabLAmX9NdXnRJHPukPvW1JKUg=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-core/-/l7-core-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-core@2.25.2":
+  "integrity" "sha512-tvKl5so8aQBeS0pwawodJ/i8xBoL5trake5x9YQ9cVCFDU5Dz8m4cpfDlIxeJxb8j2ZzIVeKQobHyezVEph8Sw=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-core/-/l7-core-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
     "@antv/async-hook" "^2.2.9"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "@mapbox/tiny-sdf" "^1.2.5"
     "@turf/helpers" "^6.1.4"
     "eventemitter3" "^4.0.0"
     "gl-matrix" "^3.1.0"
+    "hammerjs" "^2.0.8"
     "viewport-mercator-project" "^6.2.1"
 
-"@antv/l7-layers@2.24.1":
-  "integrity" "sha512-kzZ+bFXcN8aZzPBfHygnlCo0YrRnoz0Mzn4qUoAstgWx+c4FTs63+2s/Y8hPEvIRsB+eUFBxKMKe6qBgZMOdog=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-layers/-/l7-layers-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-layers@2.25.2":
+  "integrity" "sha512-mxRii8AyW9TVCRbYZm8zrfB7YZWwG+OjtrY8NMj6skKs6C5KbPpqskAnD4R+7j0nACQmXvK5LRaFN+6xwdrrJQ=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-layers/-/l7-layers-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
     "@antv/async-hook" "^2.2.9"
-    "@antv/l7-core" "2.24.1"
-    "@antv/l7-maps" "2.24.1"
-    "@antv/l7-source" "2.24.1"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-core" "2.25.2"
+    "@antv/l7-maps" "2.25.2"
+    "@antv/l7-source" "2.25.2"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "@mapbox/martini" "^0.2.0"
     "@turf/clone" "^6.5.0"
@@ -565,27 +566,27 @@
     "eventemitter3" "^4.0.0"
     "gl-matrix" "^3.1.0"
 
-"@antv/l7-map@2.24.1":
-  "integrity" "sha512-p+V1sSdxLszaqSawItYPAJRX8g1ILmlOMpKtswlQ5d0VOZQfhR+5GFG6icRhYhHzfx3q1FfEKzthN0/2vX+4wA=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-map/-/l7-map-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-map@2.25.2":
+  "integrity" "sha512-kNqtQkLali2ymHbg0vvHolkZyJGSRnHTnLYMIKwbjYi5OCIs4VQc9wHm1keRBzgGZFnv436SYmbXMo46onmhnQ=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-map/-/l7-map-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "@mapbox/point-geometry" "^0.1.0"
     "@mapbox/unitbezier" "^0.0.1"
     "eventemitter3" "^4.0.4"
     "gl-matrix" "^3.1.0"
 
-"@antv/l7-maps@2.24.1":
-  "integrity" "sha512-YLfkDZj1HEf563eU8X5CsL8qu1HoVFq51WDkKsYwjhUcETCQ6DIQAippRhAzTFmYIKodaSJnjd2MGi6A+5ZT2A=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-maps/-/l7-maps-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-maps@2.25.2":
+  "integrity" "sha512-khgvT2YQRylC/yIAfimwERimdeAVMwXG7KWwE+vTUHndKWNVGdijJF8PK6jhYhq7RQsc2kdK2A51WV1WWw3gig=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-maps/-/l7-maps-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
     "@amap/amap-jsapi-loader" "^1.0.1"
-    "@antv/l7-core" "2.24.1"
-    "@antv/l7-map" "2.24.1"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-core" "2.25.2"
+    "@antv/l7-map" "2.25.2"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "eventemitter3" "^4.0.0"
     "gl-matrix" "^3.1.0"
@@ -594,39 +595,39 @@
     "pmtiles" "^2.7.2"
     "viewport-mercator-project" "^6.2.1"
 
-"@antv/l7-renderer@2.24.1":
-  "integrity" "sha512-l0QL9I0i/6LHdfoL2s19dopfdhA9h1xXMhHHwpJPNW2BRjaFh0SQlIUUmYLiBEMey2a6YHPHfvSsFq8fu6iPTQ=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-renderer/-/l7-renderer-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-renderer@2.25.2":
+  "integrity" "sha512-VktpQdY60aZAS/b+usvTknDVWiXXU+RsxsDdKMkkkLrHurjkDLZnPEvmMBNAA15ehvMaU/4xcj362CkCnl4bpA=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-renderer/-/l7-renderer-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
     "@antv/g-device-api" "^1.6.4"
-    "@antv/l7-core" "2.24.1"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-core" "2.25.2"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "regl" "1.6.1"
 
-"@antv/l7-scene@2.24.1":
-  "integrity" "sha512-6UWb9/FEzpmS6nDZXu1epyuEYXNmaNs5XkcPoTdqCVMlGj96XA9SFeZNnSv7PkLWEelyjcJkqvIK+6LWfk+SJg=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-scene/-/l7-scene-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-scene@2.25.2":
+  "integrity" "sha512-0ZgRQTqzxw3TeF5tbAe1PA4QT2Txj7kwNYc9XmfyTwYLwBYrcgiCwwFkY4UCZdYfUEH5tzjyF6MGBKGSZ/vNjA=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-scene/-/l7-scene-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
-    "@antv/l7-component" "2.24.1"
-    "@antv/l7-core" "2.24.1"
-    "@antv/l7-layers" "2.24.1"
-    "@antv/l7-maps" "2.24.1"
-    "@antv/l7-renderer" "2.24.1"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-component" "2.25.2"
+    "@antv/l7-core" "2.25.2"
+    "@antv/l7-layers" "2.25.2"
+    "@antv/l7-maps" "2.25.2"
+    "@antv/l7-renderer" "2.25.2"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "eventemitter3" "^4.0.7"
 
-"@antv/l7-source@2.24.1":
-  "integrity" "sha512-wKvKezWy7lwbBYSlexCk9/FGQYoNUTpylcfbZy7y7n/NtpSvdlGu2lEj7D6gT+fUis+vP1gRNZQnXKIfALmczw=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-source/-/l7-source-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-source@2.25.2":
+  "integrity" "sha512-WDSY5+ZH6sZnTWcNc60pgdaxigdwmVEjycsjZHH+9ya2n8eLIfogRwhvQZf27X3pSLueMjt7hmcAgim0+7xAKA=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-source/-/l7-source-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
     "@antv/async-hook" "^2.2.9"
-    "@antv/l7-core" "2.24.1"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-core" "2.25.2"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
     "@mapbox/geojson-rewind" "^0.5.2"
     "@mapbox/vector-tile" "^1.3.1"
@@ -638,10 +639,10 @@
     "pbf" "^3.2.1"
     "supercluster" "^7.0.0"
 
-"@antv/l7-utils@2.24.1":
-  "integrity" "sha512-91JyTCJ9diaaHML0X/wnwmFlo6RBN83abPgG6egvuRS8uPWWsKONdSs14gCcEUC1/X/UyLhNyhoa0aDX8VKkbg=="
-  "resolved" "https://registry.npmjs.org/@antv/l7-utils/-/l7-utils-2.24.1.tgz"
-  "version" "2.24.1"
+"@antv/l7-utils@2.25.2":
+  "integrity" "sha512-LXCf5B10y6ift/t1L+XWAME7ZZpHYvh3/7ZWtBk9MvNdyNWoDo6W2ApOKJrm40ZeRJfCUolGWAyWjL8Vt0pRsQ=="
+  "resolved" "https://registry.npmjs.org/@antv/l7-utils/-/l7-utils-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
     "@babel/runtime" "^7.7.7"
     "@turf/bbox" "^6.5.0"
@@ -652,17 +653,17 @@
     "gl-matrix" "^3.1.0"
 
 "@antv/l7@^2.9.37":
-  "integrity" "sha512-zU3yFJYAaM63IWk4qM9Q5EHCicZxM0kLgtDFLb8eSfdWiwG1eC05PGY2SXYe/9ytGkWjytcMIJ6ueU1xhFUhUg=="
-  "resolved" "https://registry.npmjs.org/@antv/l7/-/l7-2.24.1.tgz"
-  "version" "2.24.1"
+  "integrity" "sha512-uGIWpd/NexqO7t7h8GR7wW05ne5RbDW8UwnHwXLhWNSxG2A27Kv/EWADCOqSxuigAGr51Qd9+GkTBSfbucQe4Q=="
+  "resolved" "https://registry.npmjs.org/@antv/l7/-/l7-2.25.2.tgz"
+  "version" "2.25.2"
   dependencies:
-    "@antv/l7-component" "2.24.1"
-    "@antv/l7-core" "2.24.1"
-    "@antv/l7-layers" "2.24.1"
-    "@antv/l7-maps" "2.24.1"
-    "@antv/l7-scene" "2.24.1"
-    "@antv/l7-source" "2.24.1"
-    "@antv/l7-utils" "2.24.1"
+    "@antv/l7-component" "2.25.2"
+    "@antv/l7-core" "2.25.2"
+    "@antv/l7-layers" "2.25.2"
+    "@antv/l7-maps" "2.25.2"
+    "@antv/l7-scene" "2.25.2"
+    "@antv/l7-source" "2.25.2"
+    "@antv/l7-utils" "2.25.2"
     "@babel/runtime" "^7.7.7"
 
 "@antv/l7plot-component@^0.0.11":
