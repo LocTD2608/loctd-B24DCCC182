@@ -1,4 +1,4 @@
-﻿export default [
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -35,6 +35,12 @@
 		name: 'RandomUser',
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
+	},
+	{
+		path: '/bao-cao',
+		name: 'Báo cáo thống kê',
+		component: './BaoCao',
+		icon: 'BarChartOutlined',
 	},
 
 	// DANH MUC HE THONG
