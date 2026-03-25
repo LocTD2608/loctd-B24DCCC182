@@ -46,6 +46,7 @@ export default [
 		icon: 'ArrowsAltOutlined',
 	},
 	{
+<<<<<<< HEAD
 		path: '/guess-number',
 		name: 'GuessNumber',
 		component: './GuessNumber',
@@ -62,6 +63,12 @@ export default [
 		name: 'TodoList',
 		component: './TodoList',
 		icon: 'CheckSquareOutlined',
+=======
+		path: '/bao-cao',
+		name: 'Báo cáo thống kê',
+		component: './BaoCao',
+		icon: 'BarChartOutlined',
+>>>>>>> main
 	},
 	{
 		path: '/oan-tu-ti',
