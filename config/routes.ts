@@ -145,6 +145,18 @@ export default [
 		component: './QuyetDinhTotNghiep', 
 	},
 	{
+		path: '/registration',
+		name: 'Quản lý đơn đăng ký', // Tên hiển thị trên menu
+		icon: 'FormOutlined',        // Icon từ Antd
+		component: './Registration', // Đường dẫn tới folder src/pages/Registration
+	},
+	{
+		path: '/members',
+		name: 'Quản lý thành viên',
+		icon: 'TeamOutlined',
+		component: './Members',      // Cho Module 3
+	},
+	{
 		component: './exception/404',
 	},
 ];
