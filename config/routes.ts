@@ -1,4 +1,4 @@
-﻿export default [
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -62,6 +62,21 @@
 	// 		},
 	// 	],
 	// },
+
+	// QUAN LY CONG VIEC NHOM
+	{
+		name: 'Quản lý Công việc Nhóm',
+		path: '/quan-ly-cong-viec',
+		icon: 'ProjectOutlined',
+		routes: [
+			{
+				path: '/quan-ly-cong-viec/dang-nhap',
+				name: 'Đăng nhập',
+				component: './QuanLyCongViec/DangNhap',
+				layout: false, // Ẩn menu hệ thống ở trang đăng nhập
+			},
+		],
+	},
 
 	{
 		path: '/notification',
