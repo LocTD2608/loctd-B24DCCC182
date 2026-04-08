@@ -57,24 +57,12 @@ export default [
 		component: './TodoList',
 		icon: 'CheckSquareOutlined',
 	},
-	{
-		path: '/oan-tu-ti',
-		name: 'OanTuTi',
-		component: './OanTuTi',
-		icon: 'SmileOutlined',
-	},
-	{
-		path: '/ngan-hang-cau-hoi',
-		name: 'NganHangCauHoi',
-		component: './NganHangCauHoi',
-		icon: 'ReadOutlined',
-	},
-	{
-		path: '/quan-ly-so-van-bang',
-		name: 'Quản lý Sổ Văn Bằng',
-		component: './QuanLySoVanBang',
-		icon: 'BookOutlined',
-	},
+    {
+        path: '/destinations',
+        name: 'Khám phá điểm đến',
+        icon: 'compass', 
+        component: './Destinations',
+    },
 
 	// DANH MUC HE THONG
 	// {
