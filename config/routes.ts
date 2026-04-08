@@ -138,6 +138,13 @@ export default [
 		icon: 'TeamOutlined',
 		component: './Members',      // Cho Module 3
 	},
+
+	{
+		path: '/my-tasks',
+		name: 'Công việc của tôi',
+		icon: 'CheckSquareOutlined',
+		component: './MyTasks',
+	},
 	{
 		component: './exception/404',
 	},
