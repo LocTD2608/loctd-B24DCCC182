@@ -48,12 +48,6 @@
 		component: './TodoList',
 		icon: 'CheckSquareOutlined',
 	},
-    {
-        path: '/destinations',
-        name: 'Khám phá điểm đến',
-        icon: 'compass', 
-        component: './Destinations',
-    },
 
 	// DANH MUC HE THONG
 	// {
