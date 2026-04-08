@@ -13,14 +13,15 @@ const DangNhapPage: React.FC = () => {
   // Nếu đã đăng nhập → chuyển sang trang chính
   useEffect(() => {
     if (daDangNhap) {
-      history.replace('/quan-ly-cong-viec/dashboard');
+      history.replace('/danh-sach-cong-viec');
     }
   }, [daDangNhap]);
 
   const handleFinish = (values: { ten: string }) => {
     const ok = dangNhap(values.ten);
     if (ok) {
-      history.push('/quan-ly-cong-viec/dashboard');
+      localStorage.setItem('username', values.ten); // Lưu theo localStorage
+      history.push('/danh-sach-cong-viec');
     }
   };
 

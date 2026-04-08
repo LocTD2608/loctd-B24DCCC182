@@ -1,12 +1,11 @@
-﻿import React, { useState, useEffect } from 'react';
-import { Card, Table, Button, Space, Typography, Popconfirm, message, Modal, Form, Input, Select, DatePicker, Tag } from 'antd';
-import { DeleteOutlined, EditOutlined, PlusOutlined } from '@ant-design/icons';
+﻿import React, { useState, useEffect, useMemo } from 'react';
+import { Card, Table, Button, Space, Typography, Popconfirm, message, Modal, Form, Input, Select, DatePicker, Tag, Row, Col } from 'antd';
+import { DeleteOutlined, EditOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
 
 const { Title } = Typography;
 const { Option } = Select;
 
-// ... (code interface Todo và các phần dưới của bạn cứ giữ nguyên nhé)
 interface Todo {
     id: number;
     title: string;
@@ -16,7 +15,7 @@ interface Todo {
     status: 'TODO' | 'IN_PROGRESS' | 'DONE';
 }
 
-const STORAGE_KEY = 'todolist_advanced'; // Đổi key để không bị xung đột với data cũ
+const STORAGE_KEY = 'todolist_advanced';
 
 const TodoList: React.FC = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
@@ -24,7 +23,11 @@ const TodoList: React.FC = () => {
     const [editingId, setEditingId] = useState<number | null>(null);
     const [form] = Form.useForm();
 
-    // Lấy data từ localStorage
+    // Lọc và Tìm kiếm
+    const [searchText, setSearchText] = useState('');
+    const [filterStatus, setFilterStatus] = useState<string | undefined>(undefined);
+    const [filterAssignee, setFilterAssignee] = useState<string | undefined>(undefined);
+
     useEffect(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
         if (stored) {
@@ -36,40 +39,40 @@ const TodoList: React.FC = () => {
         }
     }, []);
 
-    // Lưu data vào localStorage mỗi khi todos thay đổi
     useEffect(() => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+        if (todos.length > 0) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+        } else if (localStorage.getItem(STORAGE_KEY)) {
+            // Chỉ xóa nếu list empty
+            localStorage.setItem(STORAGE_KEY, '[]');
+        }
     }, [todos]);
 
-    // Mở Modal Thêm mới
     const showAddModal = () => {
         setEditingId(null);
         form.resetFields();
-        form.setFieldsValue({ status: 'TODO', priority: 'MEDIUM' }); // Gán giá trị mặc định
+        form.setFieldsValue({ status: 'TODO', priority: 'MEDIUM' });
         setIsModalVisible(true);
     };
 
-    // Mở Modal Chỉnh sửa
     const showEditModal = (record: Todo) => {
         setEditingId(record.id);
         form.setFieldsValue({
             ...record,
-            deadline: dayjs(record.deadline), // Format lại ngày cho form
+            deadline: dayjs(record.deadline),
         });
         setIsModalVisible(true);
     };
 
-    // Xử lý Xóa
     const handleDelete = (id: number) => {
         setTodos(todos.filter(todo => todo.id !== id));
         message.success('Đã xoá công việc!');
     };
 
-    // Xử lý Submit Form (Lưu hoặc Cập nhật)
     const handleFinish = (values: any) => {
         const todoData = {
             ...values,
-            deadline: values.deadline.format('YYYY-MM-DD'), // Lưu chuẩn ngày tháng
+            deadline: values.deadline.format('YYYY-MM-DD'),
         };
 
         if (editingId) {
@@ -83,13 +86,23 @@ const TodoList: React.FC = () => {
         setIsModalVisible(false);
     };
 
-    // 2. Cấu hình các cột cho Bảng
+    // Derived states
+    const assignees = Array.from(new Set(todos.map(t => t.assignee)));
+
+    const filteredTodos = useMemo(() => {
+        return todos.filter(todo => {
+            const matchSearch = todo.title.toLowerCase().includes(searchText.toLowerCase());
+            const matchStatus = filterStatus ? todo.status === filterStatus : true;
+            const matchAssignee = filterAssignee ? todo.assignee === filterAssignee : true;
+            return matchSearch && matchStatus && matchAssignee;
+        });
+    }, [todos, searchText, filterStatus, filterAssignee]);
+
     const columns = [
         {
             title: 'Tên công việc',
             dataIndex: 'title',
             key: 'title',
-            fontWeight: 'bold',
         },
         {
             title: 'Người được giao',
@@ -159,20 +172,56 @@ const TodoList: React.FC = () => {
                             Thêm công việc
                         </Button>
                     </div>
-                    <Table 
-                        dataSource={todos} 
-                        columns={columns} 
-                        rowKey="id" 
-                        pagination={{ pageSize: 5 }} 
-                        locale={{ emptyText: 'Chưa có công việc nào, hãy thêm mới!' }}
+
+                    <Row gutter={16}>
+                        <Col span={8}>
+                            <Input
+                                placeholder="Tìm kiếm theo tên công việc..."
+                                prefix={<SearchOutlined />}
+                                value={searchText}
+                                onChange={e => setSearchText(e.target.value)}
+                                allowClear
+                            />
+                        </Col>
+                        <Col span={8}>
+                            <Select
+                                style={{ width: '100%' }}
+                                placeholder="Lọc theo trạng thái"
+                                value={filterStatus}
+                                onChange={setFilterStatus}
+                                allowClear
+                            >
+                                <Option value="TODO">Chưa làm</Option>
+                                <Option value="IN_PROGRESS">Đang làm</Option>
+                                <Option value="DONE">Đã xong</Option>
+                            </Select>
+                        </Col>
+                        <Col span={8}>
+                            <Select
+                                style={{ width: '100%' }}
+                                placeholder="Lọc theo người được giao"
+                                value={filterAssignee}
+                                onChange={setFilterAssignee}
+                                allowClear
+                            >
+                                {assignees.map(a => <Option key={a} value={a}>{a}</Option>)}
+                            </Select>
+                        </Col>
+                    </Row>
+
+                    <Table
+                        dataSource={filteredTodos}
+                        columns={columns}
+                        rowKey="id"
+                        pagination={{ pageSize: 5 }}
+                        locale={{ emptyText: 'Chưa có công việc nào!' }}
                     />
                 </Space>
             </Card>
 
-            {/* Form nhập liệu */}
             <Modal
                 title={editingId ? "Chỉnh sửa công việc" : "Thêm công việc mới"}
-                visible={isModalVisible}
+                open={isModalVisible}
                 onCancel={() => setIsModalVisible(false)}
                 footer={null}
             >

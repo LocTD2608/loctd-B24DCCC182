@@ -87,7 +87,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 				const isUncheckPath = unCheckPermissionPaths.some((path) => window.location.pathname.includes(path));
 
 				if (location.pathname === '/') {
-					history.replace('/dashboard');
+					history.replace('/danh-sach-cong-viec');
 				} else if (
 					!isUncheckPath &&
 					currentRole &&
@@ -114,13 +114,9 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 		),
 
 		childrenRender: (dom) => (
-			<OIDCBounder>
-				<ErrorBoundary>
-					{/* <TechnicalSupportBounder> */}
-					<OneSignalBounder>{dom}</OneSignalBounder>
-					{/* </TechnicalSupportBounder> */}
-				</ErrorBoundary>
-			</OIDCBounder>
+			<ErrorBoundary>
+				{dom}
+			</ErrorBoundary>
 		),
 		menuHeaderRender: undefined,
 		...initialState?.settings,
