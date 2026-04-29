@@ -1,4 +1,4 @@
-﻿export default [
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -57,6 +57,54 @@
 	// 		},
 	// 	],
 	// },
+
+	{
+		path: '/blog',
+		name: 'Blog',
+		icon: 'read',
+		routes: [
+			{
+				path: '/blog',
+				name: 'Home',
+				component: './Blog/Home',
+				exact: true,
+			},
+			{
+				path: '/blog/about',
+				name: 'About',
+				component: './Blog/About',
+				exact: true,
+			},
+			{
+				path: '/blog/post/:id',
+				name: 'Article Detail',
+				component: './Blog/ArticleDetail',
+				hideInMenu: true,
+				exact: true,
+			},
+		],
+	},
+
+	{
+		path: '/admin/blog',
+		name: 'Quản lý Blog',
+		icon: 'form',
+		routes: [
+			{
+				path: '/admin/blog/articles',
+				name: 'Quản lý Bài viết',
+				component: './BlogAdmin/ArticleManagement',
+				exact: true,
+			},
+			{
+				path: '/admin/blog/tags',
+				name: 'Quản lý Thẻ',
+				component: './BlogAdmin/TagManagement',
+				exact: true,
+			},
+		],
+	},
+
 
 	{
 		path: '/notification',

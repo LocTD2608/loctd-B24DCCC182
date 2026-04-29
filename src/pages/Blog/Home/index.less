@@ -1,0 +1,185 @@
+.blogHomeContainer {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.heroSection {
+  background: linear-gradient(135deg, #1890ff 0%, #0050b3 100%);
+  padding: 80px 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+
+  .heroTitle {
+    color: white !important;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .heroSubtitle {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+  }
+
+  .searchBar {
+    max-width: 600px;
+    margin: 0 auto;
+    
+    :global {
+      .ant-input-affix-wrapper {
+        border-radius: 8px;
+        padding: 8px 16px;
+      }
+      .ant-btn {
+        border-radius: 0 8px 8px 0;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+.articleCard {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+
+    .coverWrapper img {
+      transform: scale(1.05);
+    }
+  }
+
+  :global {
+    .ant-card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .ant-card-cover {
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
+  }
+
+  .coverWrapper {
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+
+  .cardTags {
+    margin-bottom: 12px;
+  }
+
+  .tagBadge {
+    border-radius: 4px;
+    border: none;
+    font-weight: 500;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px !important;
+    flex-shrink: 0;
+  }
+
+  .cardSummary {
+    color: #595959;
+    flex: 1;
+    margin-bottom: 20px !important;
+  }
+
+  .cardMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8c8c8c;
+    font-size: 0.85rem;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 0;
+  color: #8c8c8c;
+  background: white;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.paginationWrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebarCard {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  :global {
+    .ant-card-head-title {
+      font-weight: 600;
+    }
+  }
+
+  .sidebarTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .tagNormal {
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 16px;
+      background-color: #f0f2f5;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: #e6f7ff;
+        color: #1890ff;
+      }
+    }
+
+    .tagActive {
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 16px;
+      background-color: #1890ff;
+      color: white;
+      border: 1px solid #1890ff;
+      font-size: 0.9rem;
+    }
+  }
+}

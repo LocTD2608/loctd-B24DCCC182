@@ -11,4 +11,12 @@ export default {
 
 	'menu.GuessNumber': 'Game Đoán Số',
 	'menu.TodoList': 'Danh Sách Công Việc',
+
+	'menu.Blog': 'Blog',
+	'menu.Blog.Home': 'Trang chủ Blog',
+	'menu.Blog.About': 'Giới thiệu tác giả',
+	'menu.Blog.Article Detail': 'Chi tiết bài viết',
+	'menu.Quản lý Blog': 'Quản lý Blog',
+	'menu.Quản lý Blog.Quản lý Bài viết': 'Quản lý Bài viết',
+	'menu.Quản lý Blog.Quản lý Thẻ': 'Quản lý Thẻ',
 };
